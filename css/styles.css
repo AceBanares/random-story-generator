@@ -2,7 +2,8 @@
 
 body {
 	font-family: helvetica, sans-serif;
-	width: 350px;
+	width: 100%;
+	padding: 30px;
 }
 
 label {
@@ -10,7 +11,8 @@ label {
 }
 
 div {
-	padding-bottom: 20px;
+	padding: 5px 0px;
+	margin: 5px 10px;
 }
 
 input[type="text"] {
@@ -18,9 +20,10 @@ input[type="text"] {
 	width: 150px;
 }
 /* Hide the output paragraph until the user has submitted the form */
-p {
+
+/* p {
 	background: #FFC125;
 	color: #5E2612;
 	padding: 10px;
 	visibility: hidden;
-}
+} */

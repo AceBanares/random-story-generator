@@ -7,9 +7,9 @@
 */
 
 var customName = document.querySelector('#customname');
-var randomize = document.querySelector('.randomize');
+var randomize = document.querySelector('#randomize');
 var story = document.querySelector('.story');
-
+var card = document.querySelector('.card');
 
 /* STEP 3: Create the variable that contains the story string that will be modified - use var storyText to containt the following:
 'It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but he was not surprised — :insertx: weighs 300 pounds, and it was a hot day.'
@@ -60,16 +60,18 @@ function result() {
 	// STEP 11a: Create a variable called weight and convert the 300lbs to kgs (1lb = 0.453592kg)
 	var weight = 300 * 0.453592;
 	// STEP 11b: Replace the string 300 pounds with the updated weight in kg
-	newStory = newStory.replace('300 pounds',weight.toFixed(2) + ' kilograms');
+	newStory = newStory.replace('300 pounds', Math.round(weight) + ' kilograms');
 	// STEP 12a: Create a variable called temp and convert °F to °C ... the formula for conversion is °C = (°F - 32) x 5/9
 	var temp = (94 - 32) * 5 / 9;
 	// STEP 12b: Replace the string '94 fahrenheit' with the updated temperature in °C
-	newStory = newStory.replace('94 fahrenheit',temp.toFixed(2) + ' celsius');
+	newStory = newStory.replace('94 fahrenheit', Math.round(temp) + ' celsius');
   }
 	/* STEP 13: Make the textContent property of the story variable (which references the paragraph) equal to newStory */
-  	story.textContent = newStory;
+  	// story.textContent = newStory;
 	// The following line makes the paragraph visible
-	story.style.visibility = 'visible';
+	// story.style.visibility = 'visible';
+	card.insertAdjacentHTML("afterbegin",`<div class='card'><div class='card-body'><section class='story container'>${newStory}</section></div></div>`);
+
 }
 
 // EVENT LISTENERS

@@ -1,28 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lab 3 | COMP1073 Client-Side JavaScript</title>
-	<link href="css/styles.css" rel="stylesheet" />
-</head>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
 
   <body>
-    <div>
-      <label for="customname">Enter custom name:</label>
-      <input id="customname" type="text" placeholder="">
+    <!-- Input name -->
+    <div class="form-group row">
+      <label for="customname" class="col-sm-2 col-form-label"
+        >Enter custom name:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="customname"
+          placeholder="Bob"
+        />
+      </div>
     </div>
-    <div>
-	  <label for="imperial">imperial</label>
-	  <input id="imperial" type="radio" name="units" value="imperial" checked>
-	  <label for="metric">metric</label>
-	  <input id="metric" type="radio" name="units" value="metric">
+    <!-- Imperial or Metric -->
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">
+        <strong>Measuring System:</strong>
+      </legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="units"
+            id="imperial"
+            value="imperial"
+            checked
+          />
+          <label class="form-check-label" for="imperial">
+            Imperial
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="units"
+            id="metric"
+            value="metric"
+          />
+          <label class="form-check-label" for="metric">
+            Metric
+          </label>
+        </div>
+      </div>
     </div>
-    <div>
-      <button class="randomize">Generate random story</button>
+    <!-- Button for random story -->
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button id="randomize" class="btn btn-outline-dark">
+          <strong>GENERATE RANDOM STORY</strong>
+        </button>
+      </div>
     </div>
     <!-- This lab based on the excellent assessment challenge at https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Silly_story_generator -->
-    <p class="story"></p>
+    <div class="card"></div>
     <script src="js/silly-story.js"></script>
   </body>
 </html>
